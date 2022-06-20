@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\2. Scripts\Photon\APIManager.cs" />
     <Compile Include="Assets\2. Scripts\Photon\DBManager.cs" />
+    <Compile Include="Assets\2. Scripts\Photon\LoadingManager.cs" />
     <Compile Include="Assets\2. Scripts\Photon\LobbyManager.cs" />
     <Compile Include="Assets\2. Scripts\Photon\LoginManager.cs" />
     <Compile Include="Assets\2. Scripts\Photon\RoomData.cs" />

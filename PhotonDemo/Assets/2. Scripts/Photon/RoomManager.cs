@@ -22,7 +22,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     private void Awake()
     {
         url = APIManager.instance.livestreamUrl;
-
+        
         if (PhotonNetwork.IsConnected)
         {
             PlayMovie();

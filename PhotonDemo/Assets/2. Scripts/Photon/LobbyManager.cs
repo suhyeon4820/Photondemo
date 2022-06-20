@@ -38,19 +38,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        
-    }
+        Debug.Log("lobby");
 
-    // 서버 접속 완료 콜백 - 마스터 서버 접속 성공시 자동 실행
-    public override void OnConnectedToMaster()
-    {
-        if (PhotonNetwork.IsConnected)
-        {
-            Debug.Log("join the master");
+        if(PhotonNetwork.IsConnected)
             PhotonNetwork.JoinLobby();  // 로비 입장 함수
-        }
-        else
-            Debug.Log("로비에 접속하지 못합");
     }
 
     void Update()

@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class APIManager : MonoBehaviour
 {
     public static APIManager instance;
-
     private LobbyManager lobbyManager;
 
     private const string MainDns = "https://dev-world-server.readyplay.co.kr/";
@@ -27,11 +26,25 @@ public class APIManager : MonoBehaviour
     [SerializeField] private Transform thumbnailPnl;
     [SerializeField] private Button thumbnailBtn;
 
+
     void Awake()
     {
         instance = this;
         lobbyManager = GameObject.Find("Lobby").GetComponent<LobbyManager>();
+        
     }
+    public static APIManager Instance
+    {
+        get
+        {
+            if(null == instance)
+            {
+                instance = new APIManager();
+            }
+            return instance;
+        }
+    }
+
     public IEnumerator GetWorldInfrom()
     {
         using (UnityWebRequest uwr = UnityWebRequest.Get(MainDns + Playworld + TotalSerch))
@@ -45,6 +58,7 @@ public class APIManager : MonoBehaviour
 
             DBManager.AllPlayworldData data = JsonUtility.FromJson<DBManager.AllPlayworldData>(uwr.downloadHandler.text);
 
+            
             switch (data.res_code)
             {
                 case 200:
@@ -87,6 +101,7 @@ public class APIManager : MonoBehaviour
             Button tempButton = button.GetComponent<Button>();
             tempButton.onClick.AddListener(() => PressIDButton(number)); // 버튼 동적 생성 및 이벤트 할당
         }
+
     }
 
     void PressIDButton(int num)

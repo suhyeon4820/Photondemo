@@ -44,16 +44,14 @@ public class LoginManager : MonoBehaviourPunCallbacks
         else
         {
             PhotonNetwork.NickName = id;
-            LoadLobby();
         }
     }
 
-    public void LoadLobby()
+    // 서버 접속 완료 콜백 - 마스터 서버 접속 성공시 자동 실행
+    // 여기다 하니까 씬 이동할때마다 로딩창 생성됨
+    public override void OnConnectedToMaster()
     {
-        if (PhotonNetwork.IsConnected)
-        {
-            PhotonNetwork.LoadLevel(1);
-        }
+        PhotonNetwork.LoadLevel(1); // 로딩창으로 씬 전환
     }
 
     // 마스터 서버 접속 실패시 자동 실행

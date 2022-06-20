@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/1. Scenes/scLogin.unity
     guid: 9afdbad73ed0f7945a083bbb35473cac
   - enabled: 1
+    path: Assets/1. Scenes/scLoading.unity
+    guid: e7a3a9472dd8a6d448bd41201a35b198
+  - enabled: 1
     path: Assets/1. Scenes/scLobby.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
